@@ -1,9 +1,9 @@
 class AlkCli < Formula
   desc "The one and only solution for managing ALK credentials for the Praella rewrite locally in your keychain"
-  homepage ""
+  homepage "https://admirsaheta.com"
   url "https://github.com/klarify-praella-team/alk-cli/archive/refs/tags/v.0.1.tar.gz"
   sha256 "fd2716818386852430cf5da5f4ee1bfdc185ce0c755488f77ec785c0ad58514e"
-  license ""
+  license "MIT"
 
   # depends_on "cmake" => :build
 
@@ -12,6 +12,7 @@ class AlkCli < Formula
     # Remove unrecognized options if warned by configure
     # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
     system "./configure", *std_configure_args, "--disable-silent-rules"
+    bin.install 'alk-cli'
     # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
   end
 
